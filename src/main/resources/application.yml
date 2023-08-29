@@ -1,0 +1,23 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:import.sql
+
+logging:
+  level:
+    org.elasticsearch: error
+    org.springframework.data.jpa: error
