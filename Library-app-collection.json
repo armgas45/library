@@ -1,0 +1,556 @@
+{
+	"info": {
+		"_postman_id": "6c3fc74e-77ab-4f2d-a174-4c83f4cbbeb6",
+		"name": "Library-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19460232"
+	},
+	"item": [
+		{
+			"name": "super-admin",
+			"item": [
+				{
+					"name": "Add admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Admin\",\n    \"phone\": \"1111111111\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sales report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/sales/report",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"sales",
+								"report"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "books",
+					"item": [
+						{
+							"name": "Add book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Lizard as she.\",\n    \"author\": \"Jeromy Hauck\",\n    \"genre\": \"Dolores\",\n    \"description\": \"March Hare went on. Her listeners were perfectly quiet till she had looked under it, and fortunately was just going to begin lessons: you'd only have to beat them off, and that if something wasn't.\",\n    \"isbn\": \"9788862081276\",\n    \"image\": \"http://placeimg.com/480/640/any\",\n    \"published\": \"2001-03-11\",\n    \"publisher\": \"Enim Est\",\n    \"price\": 9.99,\n    \"currency\": \"USD\",\n    \"available\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/books",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All books",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/admin/books",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get book by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/admin/books/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"books",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Alice said with. UPDATED \",\n    \"author\": \"Kayla Hintz\",\n    \"genre\": \"Ea\",\n    \"description\": \"Oh, my dear Dinah! I wonder what they'll do well enough; and what does it to be sure; but I shall be late!' (when she thought there was enough of me left to make out that the Mouse replied rather.\",\n    \"isbn\": \"9780825824623\",\n    \"image\": \"http://placeimg.com/480/640/any\",\n    \"published\": \"2002-09-07\",\n    \"publisher\": \"Fugit Maxime\",\n    \"price\": 9.99,\n    \"currency\": \"USD\",\n    \"available\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}	
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/admin/books/101",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"books",
+										"101"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/admin/books/102",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"books",
+										"102"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "Get User By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/admin/users/20",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"20"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Purchase a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 20,\n    \"book-list\": [\n        {\n            \"bookId\": 2,\n            \"quantity\": 1\n        }\n    ],\n    \"payment-details\": {\n        \"payment-option\": \"CREDIT_CARD\",\n        \"promocode\": \"PROMOCODE\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/purchase",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search for a book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/search?keyword=Ive",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Ive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suggest books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/users/19/suggest?limit=10",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"19",
+								"suggest"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"phone\": \"33333333\",\n    \"email\": \"john@doe.coma\",\n    \"address\": \"19 baa\",\n    \"postalZip\": \"3314\",\n    \"country\": \"am\",\n    \"password\": \"12345\",\n    \"preferences\": [\"Sapiente\", \"Dignissimos\"],\n    \"pan\": \"11111111111\",\n    \"expdate\": \"222\",\n    \"cvv\": \"222\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/users/signup",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"super-admin@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/token",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzMDA3NjcsImV4cCI6MTY5NDE2NDc2Nywic3ViIjoiam9obkBkb2UuY29tIiwicm9sZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwidG9rZW4tdHlwZSI6IlJFRlJFU0hfVE9LRU4iLCJ0b2tlbi1pZCI6IjAyMmVmM2IwLTI3NTMtNDYwNS1iMTVkLWIxMjFlM2UyMTViMyJ9.NWbXAahJ7bMAW5zuGJxqN_xUoA7Hrmu5QebJ2dJ_xlANHLlXZ2otTHNnPL6BwoX2K7D9AjUDU68Wxi_Jkma6hw\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/token/refresh",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"token",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "refresh-token",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2OTMzMDA3NjcsImV4cCI6MTY5NDE2NDc2Nywic3ViIjoiam9obkBkb2UuY29tIiwicm9sZXMiOlt7ImF1dGhvcml0eSI6IlJPTEVfVVNFUiJ9XSwidG9rZW4tdHlwZSI6IlJFRlJFU0hfVE9LRU4iLCJ0b2tlbi1pZCI6IjAyMmVmM2IwLTI3NTMtNDYwNS1iMTVkLWIxMjFlM2UyMTViMyJ9.NWbXAahJ7bMAW5zuGJxqN_xUoA7Hrmu5QebJ2dJ_xlANHLlXZ2otTHNnPL6BwoX2K7D9AjUDU68Wxi_Jkma6hw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/auth/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "public",
+			"item": [
+				{
+					"name": "Privacy Policy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/privacy",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"privacy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Terms & Conditions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/terms",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"terms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
