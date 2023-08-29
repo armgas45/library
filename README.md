@@ -29,28 +29,16 @@ body:
 #### Get Sales Report
 Accessible only with super-admin role. Provides some analytical data
 
-```http
+```
   GET /api/v1/admin/sales/report
 ```
 
 #### Get User By Id
 Accessible only with admin/super-admin role. Gives the user by id
 
-```http
+```
   GET /api/v1/admin/users/{Id}
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #### Add a Book
